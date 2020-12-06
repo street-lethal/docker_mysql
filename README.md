@@ -1,9 +1,9 @@
 ## 準備
 ```sh
 cp .env.sample .env
-cp .ssh/config.sample .ssh/config
+cp ssh/config.sample ssh/config
 vi .env
-vi .ssh/config
+vi ssh/config
 ```
 
 * 鍵を `keys/` に配置
