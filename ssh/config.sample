@@ -1,0 +1,5 @@
+Host           step_host
+HostName       <SSH server's IP or hostname>
+User           <user_name>
+IdentityFile   /path/to/key/file
+ServerAliveInterval 6
