@@ -1,8 +1,16 @@
 version: "3.7"
 services:
   mysql:
-    build: .
-    working_dir: /root
+    build:
+      context: .
+      args:
+        - USER_ID=${USER_ID}
+        - GROUP_ID=${GROUP_ID}
+    working_dir: /home/user
     env_file:
       - ./.env
     command: /bin/sh -c "tail -f /var/log/alternatives.log"
+    volumes:
+      - ./ssh:/home/user/.ssh
+      - ./keys:/home/user/keys
+    user: ${USER_ID}:${GROUP_ID}
